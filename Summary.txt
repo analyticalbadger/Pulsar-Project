@@ -1,0 +1,78 @@
+Pulsar Project - Quick Summary and Key Takeaways
+By Sheldon Kasper
+
+Please see the Jupyter Notebook for more thorough documentation and insights.
+
+Pulsar candidates collected during the High Time Resolution Universe Survey (South)
+This project involves classifying candidates into pulsar and non-pulsar classes to aid discovery.
+
+Objective
+To explore the HTRU2 dataset and determine ways to classify candidates into pulsar and non-pulsar classes. Various classification models will be built with the goal being to find the best model that classifies the candidates.
+
+Exploratory Data Analysis
+Explore the raw data including determining the number of data entries, type, checking for null values and duplicate rows, and computing statistics.
+Explore visually including histograms, pair plots, correlations, bar plots and box plots.
+Overall, the data seems fairly well behaved. There are no null entries or duplicate rows. There are some outliers but none seem too extreme.
+
+Models
+There are a number of machine learning models that can be used for this project. Since this is a binary classification problem, the following models will be built:
+ - Logistic Regression
+ - K-Nearest Neighbors (KNN)
+ - Support Vector Machine (SVM)
+ - Decision Tree
+ - Random Forest
+ - Extra Trees
+ - AdaBoost
+ - Gradient Boosting
+ - Gaussian Naive Bayes
+ - Bernoulli Naive Bayes
+ - Stochastic Gradient Descent
+ - XGBoost
+
+In addition, a few artificial neural networks will also be built:
+Using Scikit-learn:
+ - Multilayer Perceptron (MLP)
+Using Keras:
+ - MLP with 1 Hidden Layer
+ - MLP with 2 Hidden Layers
+ - MLP with 3 Hidden Layers
+ - MLP with 1 Hidden Layer and 1 Dropout Layer
+ - MLP with 2 Hidden Layers and 1 Dropout Layer
+
+Due to time and computing restraints, full model optimization by tuning hyperparameters is not possible. Instead, where applicable, a few top hyperparameters will be tuned before building the final model. 
+
+There are a number of metrics that will be used to evaluate the performance of the final models. For this project, the final ranking will be based on accuracy score. As such, when model optimization is performed the models will be tuned to achieve the best accuracy score. A final model will be built using optimized hyperparameters. Other evaluation metrics of the model will be calculated including accuracy, precision, recall, F1 score, and false positive rate. A confusion matrix will also be plotted. To reduce bias, a 5-fold cross-validation will be run on the final model and the mean accuracy score will be used.
+
+A few functions will be defined to streamline the evaluation of the models.
+
+Models were built, optimized, and evaluated.
+
+Results
+Model						5-Fold Cross-Validation Accuracy Score
+MLP - 1 Hidden Layer				0.980166
+MLP - 1 Hidden Layer and 1 Dropout Layer	0.98011
+XGBoost						0.979886
+Multilayer Perceptron (MLP)			0.979718
+Gradient Boosting				0.979607
+MLP - 2 Hidden Layers				0.979328
+MLP - 2 Hidden Layers and 1 Dropout Layer	0.979328
+Random Forest					0.979271
+MLP - 3 Hidden Layers				0.979216
+Decision Tree					0.978936
+Extra Trees					0.97888
+Support Vector Machine (SVM)			0.978713
+Stochastic Gradient Descent			0.978601
+AdaBoost					0.978321
+Logistic Regression				0.978266
+K-Nearest Neighbors (KNN)			0.977707
+Bernoulli Naive Bayes				0.950833
+Gaussian Naive Bayes				0.944018
+
+Using 5-Fold Cross-Validation Accuracy Score as the metric, MLP - 1 Hidden Layer appears to be the best model.
+
+Conclusion
+The best model created to classify candidates based on non-pulsar and pulsar classes was the artificial neural network multilayer perceptron with one hidden layer (MLP - 1 Hidden Layer). This is based solely on the 5-fold cross-validation accuracy scores.
+
+When recall, the percentage of positive cases that were caught, is considered, the artificial neural network multilayer perceptron with two hidden layers and 1 dropout layer (MLP - 2 Hidden Layers and 1 Dropout Layer) performs quite well. A better recall rate could be achieved by tuning various hyperparameters to maximize this instead of accuracy score.
+
+Further hyperparameter tuning could produce even better models. Some hyperparameters were not tuned or tuned only at a basic level. More time and resources would allow more thorough testing of promising models. Feature engineering may also yield improved modelling. Additional layers and tuning with the artificial neural networks multilayer perceptron could also potentially generate better models.
