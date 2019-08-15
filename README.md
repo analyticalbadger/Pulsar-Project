@@ -11,6 +11,9 @@ To explore the HTRU2 dataset and determine ways to classify candidates into puls
 Files
 
 PulsarProject.ipynb - Jupyter Notebook of Project
+
 PulsarProjectPresentation-MachineLearningSample.pdf - PDF of Project Presentation
+
 Summary.txt - Quick Summary and Key Takeaways
+
 ConfusionMatrix.png - Picture Used in Notebook
